@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+    char str[100],ch;
+    int i,index=-1;
+    printf("Enter a string :");
+    fgets(str,sizeof(str),stdin);
+    printf("enter a character :");
+    scanf("%c",&ch);
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(str[i]==ch)
+        {
+            index =i;
+            break;
+        }
+    }
+    if (index !=-1)
+    {
+        printf("the first occurrence of '%c' is at index %d\n",ch,index);
+    }
+    else
+    {
+       printf("The character '%c' is not found in the string .n",ch);  
+    }
+    return 0;
+}
