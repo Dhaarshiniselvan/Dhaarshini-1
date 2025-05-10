@@ -1,0 +1,27 @@
+#include <stdio.h>
+typedef unsigned int Age;       
+typedef float Marks;            
+typedef char Name[50];          
+typedef struct {
+    Name name;
+    Age age;
+    Marks marks;
+} Student;
+
+int main()
+ {
+    Student student;
+    printf("Enter the student's name: ");
+    scanf("%s", student.name);
+    printf("Enter the student's age: ");
+    scanf("%u", &student.age);
+    printf("Enter the student's marks: ");
+    scanf("%f", &student.marks);
+    printf("\nStudent Details:\n");
+    printf("Name: %s\n", student.name);
+    printf("Age: %u\n", student.age);
+    printf("Marks: %.2f\n", student.marks);
+    return 0;
+}
+
+
