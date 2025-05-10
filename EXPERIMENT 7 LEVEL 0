@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+ {
+    int size;
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+     int numbers[size];
+    int *arrPointer = numbers;
+   printf("Enter %d elements:\n", size);
+    for (int i = 0; i < size; i++)
+    {
+        scanf("%d", arrPointer + i);
+    }
+
+    printf("Array elements accessed using a pointer: ");
+    for (int i = 0; i < size; i++)
+ {
+        printf("%d ", *(arrPointer + i));
+ }
+    printf("\n");
+
+    return 0;
+}
+
