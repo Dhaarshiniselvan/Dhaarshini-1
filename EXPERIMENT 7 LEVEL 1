@@ -1,0 +1,26 @@
+#include <stdio.h>
+int* add(int a, int b)
+ {
+    static int result; 
+    result = a + b;
+    return &result;
+}
+
+int* subtract(int a, int b)
+ {
+    static int result; 
+    result = a - b;
+    return &result;
+}
+int main()
+ {
+    int a, b;
+  printf("Enter a and b values: ");
+    scanf("%d %d", &a, &b);
+    int* sum = add(a, b);
+    int* diff = subtract(a, b);
+    printf("Addition of %d, %d is %d\n", a, b, *sum);
+    printf("Subtraction of %d, %d is %d\n", a, b, *diff);
+    return 0;
+}
+
