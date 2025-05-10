@@ -1,0 +1,61 @@
+#include <stdio.h>
+struct Student 
+{
+    unsigned int id : 12;           
+    unsigned int age : 6;           
+    unsigned int year : 3;          
+    unsigned int isHosteller : 1;
+    unsigned int marks : 7;       
+};
+int main()
+{
+    struct Student student;
+
+    printf("Enter student ID (max 4095): ");
+    scanf("%u", &student.id);
+    if (student.id > 4095) 
+    {
+        printf("Invalid ID! Must be within 0-4095.\n");
+        return 1;
+    }
+
+    printf("Enter age (max 63): ");
+    scanf("%u", &student.age);
+    if (student.age > 63)
+    {
+        printf("Invalid age! Must be within 0-63.\n");
+        return 1;
+    }
+
+    printf("Enter year of study (1-7): ");
+    scanf("%u", &student.year);
+    if (student.year > 7 || student.year < 1) 
+    {
+        printf("Invalid year! Must be between 1 and 7.\n");
+        return 1;
+    }
+    printf("Is the student a hosteller? (1 for Yes, 0 for No): ");
+    scanf("%u", &student.isHosteller);
+    if (student.isHosteller > 1) 
+    {
+        printf("Invalid input! Must be 0 (No) or 1 (Yes).\n");
+        return 1;
+    }
+
+    printf("Enter marks (0-100): ");
+    scanf("%u", &student.marks);
+    if (student.marks > 100) 
+    {
+        printf("Invalid marks! Must be within 0-100.\n");
+        return 1;
+    }
+
+    printf("\nStudent Details:\n");
+    printf("ID: %u\n", student.id);
+    printf("Age: %u\n", student.age);
+    printf("Year of Study: %u\n", student.year);
+    printf("Hosteller: %s\n", student.isHosteller ? "Yes" : "No");
+    printf("Marks: %u\n", student.marks);
+    return 0;
+}
+
