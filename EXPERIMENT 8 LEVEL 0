@@ -1,0 +1,17 @@
+#include <stdio.h>
+#define SQUARE(x) ((x) * (x))
+#define CUBE(x) ((x) * (x) * (x))
+int main() {
+    int number;
+    
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    
+    int square = SQUARE(number);
+    int cube = CUBE(number);
+    
+    printf("Square of %d: %d\n", number, square);
+    printf("Cube of %d: %d\n", number, cube);
+    
+    return 0;
+}
