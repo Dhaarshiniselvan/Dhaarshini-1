@@ -1,0 +1,35 @@
+#include<stdio.h>
+int main()
+{
+    char str[100];
+    int freq[256]={0};
+    int minfreq =1000;
+    char minchar;
+    printf("Enter the string:");
+    fgets(str ,sizeof(str),stdin);
+    for(int i=0;str[i]!='\0';i++)
+    {
+        if(str[i]!='\n' && str[i]!='\n')
+        {
+            freq[(int)str[i]]++;
+        }
+    }
+    for(int i=0;i<256;i++)
+    {
+        if(freq[i]>0 && freq[i]<minfreq)
+        {
+            minfreq=freq[i];
+            minchar=(char)i;
+        }
+    }
+    if(minfreq !=1000)
+    {
+       printf("the minimum occurring character is'%c'with a frequency of %d .\n",minchar,minfreq); 
+    }
+   else
+   {
+       printf("no character found in the string.\n");
+   }
+   return 0;
+}
+
